@@ -1,0 +1,28 @@
+{
+  "name": "electron-countdown-timer",
+  "version": "1.0.0",
+  "description": "A simple count down timer built with electron.js",
+  "main": "./src/js/main.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+	  "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/boikle/electron-countdown-timer.git"
+  },
+  "keywords": [
+    "electron.js"
+  ],
+  "author": "Robert Oikle",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/boikle/electron-countdown-timer/issues"
+  },
+  "homepage": "https://github.com/boikle/electron-countdown-timer#readme",
+  "devDependencies": {
+    "electron": "^9.0.4"
+  }
+}

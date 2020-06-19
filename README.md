@@ -1,2 +1,3 @@
 # electron-countdown-timer
-A simple countdown timer application written in electron.js
+
+Description: A simple countdown timer application using electron.js, with the goal of becoming more familiar with electron.
