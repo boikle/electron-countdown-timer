@@ -3,11 +3,13 @@
   "version": "1.0.0",
   "description": "A simple count down timer built with electron.js",
   "main": "./src/js/main.js",
+  "private": true,
   "directories": {
     "test": "test"
   },
   "scripts": {
-	  "start": "electron ."
+    "start": "electron .",
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -23,6 +25,9 @@
   },
   "homepage": "https://github.com/boikle/electron-countdown-timer#readme",
   "devDependencies": {
-    "electron": "^9.0.4"
+    "electron": "^9.0.4",
+    "eslint": "^7.3.0",
+    "mocha": "^8.0.1",
+    "webpack": "^4.43.0"
   }
 }
