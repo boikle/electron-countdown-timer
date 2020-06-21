@@ -2,7 +2,7 @@ const {app, BrowserWindow, Menu} = require('electron');
 
 function createWindow () {
 	// Create a browser window.
-	let win = new BrowserWindow({
+	let mainWindow = new BrowserWindow({
 		width: 600,
 		height: 400,
 		webPreferences: {
@@ -11,7 +11,7 @@ function createWindow () {
 	});
 
 	// Load index.html file into electron browser window
-	win.loadFile('src/index.html');
+	mainWindow.loadFile('src/index.html');
 
 	let menu = Menu.buildFromTemplate([
 		{
@@ -21,6 +21,26 @@ function createWindow () {
 					label: "Exit",
 					click() {
 						app.quit();
+					}
+				}
+			]
+		},
+		{
+			label: 'Help',
+			submenu: [
+				{
+					label: "About",
+					click() {
+						let aboutWindow = new BrowserWindow({
+							width: 300,
+							height: 300,
+							webPreferences: {
+								nodeIntegration: true
+							}
+
+						});
+						aboutWindow.loadFile('src/about.html');
+						aboutWindow.removeMenu();
 					}
 				}
 			]
