@@ -1,4 +1,4 @@
-const {app, BrowserWindow} = require('electron');
+const {app, BrowserWindow, Menu} = require('electron');
 
 function createWindow () {
 	// Create a browser window.
@@ -11,12 +11,23 @@ function createWindow () {
 	});
 
 	// Load index.html file into electron browser window
-	win.loadFile('src/html/index.html');
+	win.loadFile('src/index.html');
 
-	// Set win to null upon close
-	win.on('closed', () => {
-		win = null;
-	});
+	let menu = Menu.buildFromTemplate([
+		{
+			label: 'Menu',
+			submenu: [
+				{
+					label: "Exit",
+					click() {
+						app.quit();
+					}
+				}
+			]
+		}
+	]);
+
+	Menu.setApplicationMenu(menu);
 }
 
 // When ready, create the app window
@@ -37,4 +48,3 @@ app.on('activate', () => {
 		createWindow();
 	}
 });
-
