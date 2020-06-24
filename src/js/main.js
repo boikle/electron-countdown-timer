@@ -23,6 +23,9 @@ function createMainWindow () {
 		}
 	});
 
+	// Open devtools on start
+	//mainWindow.webContents.openDevTools();
+
 	// Load index.html file into electron browser window
 	mainWindow.loadFile('src/index.html');
 
