@@ -12,6 +12,11 @@ class CountdownTimer {
 			this.remainingTime = secs;
 		}
 	}
+
+	updateCountdownDisplay() {
+		const timer = document.getElementById('countdown_timer');
+		timer.textContent = "00:05:00";
+	}
 }
 
-module.export = CountdownTimer;
+module.exports = CountdownTimer;
