@@ -1,6 +1,11 @@
 class CountdownTimer {
 	constructor() {
+		this.timer = document.getElementById('countdown_timer');
 		this.remainingTime = 300; // 5 minutes
+
+		document.addEventListener('startTimer', function() {
+			console.log('Play button was pushed!');
+		});
 	}
 
 	getCountdownTime() {
@@ -14,8 +19,7 @@ class CountdownTimer {
 	}
 
 	updateCountdownDisplay() {
-		const timer = document.getElementById('countdown_timer');
-		timer.textContent = "00:05:00";
+		this.timer.textContent = "00:05:00";
 	}
 }
 
