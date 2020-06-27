@@ -1,0 +1,10 @@
+#countdown_control_panel {
+    text-align: center;
+    margin: 5px auto;
+}
+
+#countdown_control_panel>div {
+    margin: auto;
+    padding: 5px;
+    width: fit-content;
+}
