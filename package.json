@@ -29,6 +29,7 @@
   "devDependencies": {
     "electron": "^9.0.4",
     "eslint": "^7.3.0",
+    "jsdom": "^16.2.2",
     "mocha": "^8.0.1"
   }
 }
