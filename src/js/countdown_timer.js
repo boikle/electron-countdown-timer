@@ -15,7 +15,7 @@ class CountdownTimer {
 		});
 
 		document.addEventListener('pauseTimer', function() {
-			window.clearInterval(this.countdownInterval);
+			window.clearInterval(_this.countdownInterval);
 		});
 
 		// Update timer to display
@@ -44,7 +44,7 @@ class CountdownTimer {
 	convertMStoHHMMSS(ms) {
 		let hh = Math.floor(ms / 3600000);
 		let mm = Math.floor((ms - (hh * 3600000)) / 60000);
-		let ss = Math.floor(ms - (hh * 3600000) - (mm * 60000)) / 1000;
+		let ss = Math.floor((ms - (hh * 3600000) - (mm * 60000)) / 1000);
 
 		// Format hours, minutes, and seconds values for timer
 		hh = hh < 10 ? "0" + hh : hh;
