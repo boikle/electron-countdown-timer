@@ -1,0 +1,24 @@
+input {
+    width: 40px;
+}
+
+#timer_config {
+    width: max-content;
+    margin: 0 auto;
+    padding: 5px;
+    text-align: center;
+    border: 1px solid #666;
+    border-radius: 2px;
+}
+
+#set_timer_btn {
+    width: max-content;
+    background: #53cd3f;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    margin: 12px auto 0px auto;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}

@@ -13,6 +13,19 @@ function createAboutWindow() {
 	aboutWindow.loadFile('src/about.html');
 }
 
+function createConfigWindow() {
+	let configWindow = new BrowserWindow({
+		width: 200,
+		height: 100,
+		frame: false,
+		alwaysOnTop: true,
+		webPreferences: {
+			nodeIntegration: true
+		}
+	});
+	configWindow.loadFile('src/config.html');
+}
+
 function createMainWindow () {
 	// Create a browser window.
 	let mainWindow = new BrowserWindow({
@@ -24,7 +37,6 @@ function createMainWindow () {
 	});
 
 	// Open devtools on start
-	//mainWindow.webContents.openDevTools();
 
 	// Load index.html file into electron browser window
 	mainWindow.loadFile('src/index.html');
@@ -34,6 +46,12 @@ function createMainWindow () {
 		{
 			label: 'Menu',
 			submenu: [
+				{
+					label: "Configure Timer",
+					click() {
+						createConfigWindow();
+					}
+				},
 				{
 					label: "Exit",
 					click() {
