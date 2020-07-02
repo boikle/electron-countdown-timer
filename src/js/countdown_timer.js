@@ -46,6 +46,8 @@ class CountdownTimer {
 	/**
 	* Converts remaing time into a string used by the countdown timer
 	* The countdown timer uses the format of HH:MM:SS.
+	* @param {number} ms - The remaining time in milliseconds.
+	* @return {string} - hh:mm:ss formatted string of the provided ms.
 	*/
 	convertMStoHHMMSS(ms) {
 		let hh = Math.floor(ms / 3600000);
