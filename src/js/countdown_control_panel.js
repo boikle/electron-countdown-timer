@@ -43,15 +43,6 @@ class CountdownControlPanel {
 			this.playBtn.innerHTML = '\u25B6';
 		}
 	}
-
-	addConfigButton() {
-		const panel = document.getElementById('countdown_control_panel');
-		let configBtn = document.createElement('div');
-		configBtn.innerHTML = 'config';
-		configBtn.setAttribute('id', 'configbtn');
-
-		panel.appendChild(configBtn);
-	}
 }
 
 module.exports = CountdownControlPanel;
