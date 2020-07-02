@@ -15,7 +15,7 @@ class CountdownTimer {
 		});
 
 		document.addEventListener('pauseTimer', function() {
-			window.clearInterval(_this.countdownInterval);
+			_this.pauseTimer();
 		});
 
 		// Update timer to display
@@ -37,9 +37,15 @@ class CountdownTimer {
 	}
 
 	/**
+	* Pause the countdown timer at it's current state.
+	*/
+	pauseTimer() {
+		window.clearInterval(this.countdownInterval);
+	}
+
+	/**
 	* Converts remaing time into a string used by the countdown timer
 	* The countdown timer uses the format of HH:MM:SS.
-	* @param {number} remainingTime - The remaining time in ms.
 	*/
 	convertMStoHHMMSS(ms) {
 		let hh = Math.floor(ms / 3600000);
