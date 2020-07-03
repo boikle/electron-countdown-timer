@@ -1,5 +1,6 @@
 const {app, BrowserWindow, Menu, ipcMain} = require('electron');
 
+// Create the about window
 function createAboutWindow() {
 	let aboutWindow = new BrowserWindow({
 		width: 300,
@@ -13,6 +14,7 @@ function createAboutWindow() {
 	aboutWindow.loadFile('src/about.html');
 }
 
+// Create the config timer window
 function createConfigWindow() {
 	let configWindow = new BrowserWindow({
 		width: 200,
@@ -30,6 +32,7 @@ function createConfigWindow() {
 	configWindow.loadFile('src/config.html');
 }
 
+// Create the main countdown timer window
 function createMainWindow () {
 	// Create a browser window.
 	let mainWindow = new BrowserWindow({
