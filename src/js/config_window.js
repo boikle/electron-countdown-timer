@@ -9,9 +9,9 @@ const set_timer_btn = document.getElementById('set_timer_btn');
 */
 function convertHHMMSSInputsToMS() {
 	let MS;
-	let HH = document.getElementById('hh').value;
-	let MM = document.getElementById('mm').value;
-	let SS = document.getElementById('ss').value;
+	let HH = Number(document.getElementById('hh').value);
+	let MM = Number(document.getElementById('mm').value);
+	let SS = Number(document.getElementById('ss').value);
 
 	MS = (HH * 3600000) + (MM * 60000) + (SS * 1000);
 	return MS;
