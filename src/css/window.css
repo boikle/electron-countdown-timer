@@ -2,3 +2,15 @@ body {
     background-color: #333333;
     color: #efefef;
 }
+
+.window_btn {
+    width: max-content;
+    background: #53cd3f;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    margin: 12px auto 0px auto;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
