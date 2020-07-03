@@ -1,4 +1,4 @@
-const {app, BrowserWindow, Menu} = require('electron');
+const {app, BrowserWindow, Menu, ipcMain} = require('electron');
 
 function createAboutWindow() {
 	let aboutWindow = new BrowserWindow({
@@ -23,6 +23,10 @@ function createConfigWindow() {
 			nodeIntegration: true
 		}
 	});
+
+	// Open devtools on start
+	//configWindow.webContents.openDevTools();
+
 	configWindow.loadFile('src/config.html');
 }
 
@@ -37,9 +41,16 @@ function createMainWindow () {
 	});
 
 	// Open devtools on start
+	//mainWindow.webContents.openDevTools();
 
 	// Load index.html file into electron browser window
 	mainWindow.loadFile('src/index.html');
+
+	// Inter Process Communication
+	// Sends an configTimer event with the received argument
+	ipcMain.on('configTimer', function(event, arg) {
+		mainWindow.webContents.send('configTimer', arg);
+	});
 
 	// Define the main window's menu bar
 	let menu = Menu.buildFromTemplate([
