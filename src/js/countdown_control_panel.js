@@ -16,8 +16,8 @@ class CountdownControlPanel {
 		let _this = this;
 		const panel = document.getElementById('countdown_control_panel');
 		this.playBtn = document.createElement('div');
-		this.playBtn.innerHTML = '\u25B6';
 		this.playBtn.setAttribute('id', 'playbtn');
+		this.playBtn.classList.remove('pause');
 		this.playBtn.addEventListener('click', function() {
 			_this.togglePlayButtonState();
 		});
@@ -34,13 +34,13 @@ class CountdownControlPanel {
 			event = new CustomEvent("startTimer");
 			document.dispatchEvent(event);
 			this.state = "on";
-			this.playBtn.innerHTML = '\u23F8';
+			this.playBtn.classList.add('pause');
 
 		} else {
 			event = new CustomEvent("pauseTimer");
 			document.dispatchEvent(event);
 			this.state = "off";
-			this.playBtn.innerHTML = '\u25B6';
+			this.playBtn.classList.remove('pause');
 		}
 	}
 }
