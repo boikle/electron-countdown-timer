@@ -4,13 +4,20 @@ const {app, BrowserWindow, Menu, ipcMain} = require('electron');
 function createAboutWindow() {
 	let aboutWindow = new BrowserWindow({
 		width: 300,
-		height: 300,
-		frame: false,
+		height: 320,
+		frame: true,
 		alwaysOnTop: true,
 		webPreferences: {
 			nodeIntegration: true
 		}
 	});
+
+	// Remove the menu
+	aboutWindow.removeMenu();
+
+	// Open devtools on start
+	//aboutWindow.webContents.openDevTools();
+
 	aboutWindow.loadFile('src/about.html');
 }
 
@@ -36,8 +43,8 @@ function createConfigWindow() {
 function createMainWindow () {
 	// Create a browser window.
 	let mainWindow = new BrowserWindow({
-		width: 400,
-		height: 200,
+		width: 300,
+		height: 180,
 		webPreferences: {
 			nodeIntegration: true
 		}
