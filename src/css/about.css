@@ -1,0 +1,11 @@
+#about_window_text_container {
+    padding: 5px;
+}
+
+#about_window_text_container a {
+    color: cyan;
+}
+
+#about_window_text_container .title {
+    font-size: 32px;
+}
