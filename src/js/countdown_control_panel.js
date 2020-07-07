@@ -7,6 +7,9 @@ class CountdownControlPanel {
 	constructor() {
 		this.state = "off";
 		this.playBtn;
+
+		// Add play button
+		this.addPlayButton();
 	}
 
 	/**
@@ -31,16 +34,16 @@ class CountdownControlPanel {
 	togglePlayButtonState() {
 		let event;
 		if (this.state === "off") {
-			event = new CustomEvent("startTimer");
-			document.dispatchEvent(event);
 			this.state = "on";
 			this.playBtn.classList.add('pause');
+			event = new CustomEvent("startTimer");
+			document.dispatchEvent(event);
 
 		} else {
-			event = new CustomEvent("pauseTimer");
-			document.dispatchEvent(event);
 			this.state = "off";
 			this.playBtn.classList.remove('pause');
+			event = new CustomEvent("pauseTimer");
+			document.dispatchEvent(event);
 		}
 	}
 }

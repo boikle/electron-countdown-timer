@@ -1,3 +1,5 @@
+const CountdownControlPanel = require('./countdown_control_panel');
+
 /** Class representing a coundown timer */
 class CountdownTimer {
 	/**
@@ -5,6 +7,7 @@ class CountdownTimer {
 	* @constructor
 	*/
 	constructor() {
+		this.controlPanel = new CountdownControlPanel();
 		this.countdownInterval = null;
 		let _this = this;
 		this.timer = document.getElementById('countdown_timer');
@@ -31,8 +34,15 @@ class CountdownTimer {
 		let endTime = Date.now() + (this.remainingTime);
 		this.countdownInterval = window.setInterval(function() {
 			let remainingTime = endTime - Date.now();
-			_this.setCountdownTime(remainingTime);
-			_this.updateTimer();
+			if (remainingTime > 0){
+				_this.setCountdownTime(remainingTime);
+				_this.updateTimer();
+			} else {
+				_this.setCountdownTime(0);
+				_this.updateTimer();
+				_this.pauseTimer();
+				_this.controlPanel.togglePlayButtonState();
+			}
 		}, interval);
 	}
 
