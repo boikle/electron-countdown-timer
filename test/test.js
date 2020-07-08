@@ -44,4 +44,10 @@ describe('Timer', function() {
             assert.equal(timer.getCountdownTime(), 500000);
         });
     });
+
+	describe('convertMStoHHMMSS()', function() {
+		it('3745000 ms should return a formatted string of 01:02:25', function() {
+			assert.equal(timer.convertMStoHHMMSS(3745000), '01:02:25')
+		});
+	});
 });
