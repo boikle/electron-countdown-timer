@@ -34,7 +34,7 @@ class CountdownTimer {
 		let endTime = Date.now() + (this.remainingTime);
 		this.countdownInterval = window.setInterval(function() {
 			let remainingTime = endTime - Date.now();
-			if (remainingTime > 0){
+			if (remainingTime > 0) {
 				_this.setCountdownTime(remainingTime);
 				_this.updateTimer();
 			} else {
