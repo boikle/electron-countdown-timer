@@ -12,9 +12,12 @@ class CountdownControlPanel {
 		this.addPlayButton();
 	}
 
-	/**
-	* Adds a play button to the control panel
-	*/
+	// Get the current state of playBtn
+	getState() {
+		return this.state;
+	}
+
+	// Adds a play button to the control panel
 	addPlayButton() {
 		let _this = this;
 		const panel = document.getElementById('countdown_control_panel');
@@ -28,9 +31,7 @@ class CountdownControlPanel {
 		panel.appendChild(this.playBtn);
 	}
 
-	/**
-	* Helper function to perform toggle logic when play/pause button is clicked
-	*/
+	// Helper function to perform toggle logic when play/pause button is clicked
 	togglePlayButtonState() {
 		let event;
 		if (this.state === "off") {
