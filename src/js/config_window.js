@@ -5,7 +5,7 @@ const set_timer_btn = document.getElementById('set_timer_btn');
 * Convert Hours (HH), Minutes (MM), and Seconds (SS) values
 * provided by config window input fields, and converts the combination
 * to milliseconds.
-* @return
+* @returns MS - milliseconds
 */
 function convertHHMMSSInputsToMS() {
 	let MS;
