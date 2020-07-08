@@ -45,6 +45,7 @@ function createMainWindow () {
 	let mainWindow = new BrowserWindow({
 		width: 300,
 		height: 180,
+		icon: "src/imgs/icon.png",
 		webPreferences: {
 			nodeIntegration: true
 		}
