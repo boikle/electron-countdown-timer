@@ -17,9 +17,56 @@ function convertHHMMSSInputsToMS() {
 	return MS;
 }
 
+/**
+* Checks if the input fields contain valid numeric values. If invalid, user
+* receives a warning message.
+*
+* Valid input ranges:
+*  Hours must be between 0 - 23.
+*  Minutes must be between 0 - 59.
+*  Seconds must be between 0 - 59.
+*/
+function inputValidator() {
+	let showWarning = false;
+	let HH = document.getElementById('hh');
+	let MM = document.getElementById('mm');
+	let SS = document.getElementById('ss');
+
+	if (Number(HH.value) > 23) {
+		HH.value = 23;
+		showWarning = true;
+	} else if (Number(HH.value) < 0) {
+		HH.value = 0;
+		showWarning = true;
+	}
+
+	if (Number(MM.value) > 59) {
+		MM.value = 59;
+		showWarning = true;
+	} else if (Number(MM.value) < 0) {
+		MM.value = 0;
+		showWarning = true;
+	}
+
+	if (Number(SS.value) > 59) {
+		SS.value = 59;
+		showWarning = true;
+	} else if (Number(SS.value) < 0) {
+		SS.value = 0;
+		showWarning = true;
+	}
+
+	if (showWarning) {
+		window.alert('Invalid Inputs: \n Hours must be between 0-23. \n Minutes must be between 0-59. \n Seconds must be between 0-59.');
+	}
+}
+
 // Add Event Handler for set timer button
 set_timer_btn.addEventListener('click', function() {
 	let config_window = remote.getCurrentWindow();
+
+	// Validate Input values;
+	inputValidator();
 
 	// Convert input values to Milliseconds
 	let MS = convertHHMMSSInputsToMS();
