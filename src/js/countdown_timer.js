@@ -97,6 +97,14 @@ class CountdownTimer {
 			this.remainingTime = ms;
 		}
 	}
+
+	/**
+	* Get reference to the timer element
+	* @returns timer element
+	*/
+	getTimer() {
+		return this.timer;
+	}
 }
 
 module.exports = CountdownTimer;
