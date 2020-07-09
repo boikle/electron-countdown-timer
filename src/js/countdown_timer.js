@@ -11,7 +11,7 @@ class CountdownTimer {
 		this.countdownInterval = null;
 		let _this = this;
 		this.timer = document.getElementById('countdown_timer');
-		this.remainingTime = 300000; // 5 minutes in ms.
+		this.remainingTime = 900000; // 15 minutes in ms.
 
 		document.addEventListener('startTimer', function() {
 			_this.startTimer();
@@ -26,11 +26,11 @@ class CountdownTimer {
 	}
 
 	/**
-	* Start the countdown timer, updating the timer text every second.
+	* Start the countdown timer, updating the timer text 200 ms.
 	*/
 	startTimer() {
 		let _this = this;
-		let interval = 1000; // milliseconds
+		let interval = 200; // milliseconds
 		let endTime = Date.now() + (this.remainingTime);
 		this.countdownInterval = window.setInterval(function() {
 			let remainingTime = endTime - Date.now();
