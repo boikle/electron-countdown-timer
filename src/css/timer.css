@@ -6,6 +6,7 @@
     font-family: arial, sans-serif;
     color: #10d1d7;
     text-shadow: 1px 2px 2px #111111;
+    cursor: pointer;
 }
 
 #playbtn {
