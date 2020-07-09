@@ -63,6 +63,11 @@ function createMainWindow () {
 		mainWindow.webContents.send('configTimer', arg);
 	});
 
+	// Open Config Window when openConfigWindow event is received.
+	ipcMain.on('openConfigWindow', function(event, arg) {
+		createConfigWindow();
+	});
+
 	// Define the main window's menu bar
 	let menu = Menu.buildFromTemplate([
 		{
