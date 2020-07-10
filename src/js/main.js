@@ -7,6 +7,7 @@ function createAboutWindow() {
 		height: 320,
 		frame: true,
 		alwaysOnTop: true,
+		resizable: false,
 		webPreferences: {
 			nodeIntegration: true
 		}
@@ -28,6 +29,7 @@ function createConfigWindow() {
 		height: 100,
 		frame: false,
 		alwaysOnTop: true,
+		resizable: false,
 		webPreferences: {
 			nodeIntegration: true
 		}
@@ -46,6 +48,7 @@ function createMainWindow () {
 		width: 300,
 		height: 180,
 		icon: "src/imgs/icon.png",
+		resizable: false,
 		webPreferences: {
 			nodeIntegration: true
 		}
