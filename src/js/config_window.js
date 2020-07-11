@@ -57,7 +57,17 @@ function inputValidator() {
 	}
 
 	if (showWarning) {
-		window.alert('Invalid Inputs: \n Hours must be between 0-23. \n Minutes must be between 0-59. \n Seconds must be between 0-59.');
+		const dialogOptions = {
+			type: 'warning',
+			buttons: ['OK'],
+			defaultId: 0,
+			title: 'Invalid Input',
+			message: 'Time inputs exceeded ranges.',
+			detail: 'Hours must be between 0-23. \nMinutes must be between 0-59. \nSeconds must be between 0-59.'
+		};
+
+		// Request Main renderer to display warning dialog window.
+		ipcRenderer.send('warningDialog', dialogOptions);
 	}
 }
 

@@ -1,4 +1,4 @@
-const {app, BrowserWindow, Menu, ipcMain} = require('electron');
+const {app, BrowserWindow, dialog, Menu, ipcMain} = require('electron');
 
 // Create the about window
 function createAboutWindow() {
@@ -67,8 +67,13 @@ function createMainWindow () {
 	});
 
 	// Open Config Window when openConfigWindow event is received.
-	ipcMain.on('openConfigWindow', function(event, arg) {
+	ipcMain.on('openConfigWindow', function() {
 		createConfigWindow();
+	});
+
+	// Open warning dialog window with provided dialog options.
+	ipcMain.on('warningDialog', function(event, dialogOptions) {
+		dialog.showMessageBox(dialogOptions);
 	});
 
 	// Define the main window's menu bar
