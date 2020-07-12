@@ -33,8 +33,8 @@ describe('Timer', function() {
             assert.equal(typeof timer.getCountdownTime(), "number");
         });
 
-        it('The default initial value should be 300000', function() {
-            assert.equal(timer.getCountdownTime(), 300000);
+        it('The default initial value should be 900000', function() {
+            assert.equal(timer.getCountdownTime(), 900000);
         });
     });
 
