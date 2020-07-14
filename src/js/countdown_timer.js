@@ -1,4 +1,4 @@
-const CountdownControlPanel = require('./countdown_control_panel');
+const CountdownControls = require('./countdown_controls');
 
 /** Class representing a coundown timer */
 class CountdownTimer {
@@ -7,7 +7,7 @@ class CountdownTimer {
 	* @constructor
 	*/
 	constructor() {
-		this.controlPanel = new CountdownControlPanel();
+		this.timerControls = new CountdownControls();
 		this.countdownInterval = null;
 		let _this = this;
 		this.timer = document.getElementById('countdown_timer');
@@ -41,7 +41,7 @@ class CountdownTimer {
 				_this.setCountdownTime(0);
 				_this.updateTimer();
 				_this.pauseTimer();
-				_this.controlPanel.togglePlayButtonState();
+				_this.timerControls.togglePlayButtonState();
 			}
 		}, interval);
 	}
