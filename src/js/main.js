@@ -17,7 +17,7 @@ function createAboutWindow() {
 	aboutWindow.removeMenu();
 
 	// Open devtools on start
-	//aboutWindow.webContents.openDevTools();
+	// aboutWindow.webContents.openDevTools();
 
 	aboutWindow.loadFile('src/about.html');
 }
@@ -36,7 +36,7 @@ function createConfigWindow() {
 	});
 
 	// Open devtools on start
-	//configWindow.webContents.openDevTools();
+	// configWindow.webContents.openDevTools();
 
 	configWindow.loadFile('src/config.html');
 }
@@ -55,7 +55,7 @@ function createMainWindow () {
 	});
 
 	// Open devtools on start
-	//mainWindow.webContents.openDevTools();
+	// mainWindow.webContents.openDevTools();
 
 	// Load index.html file into electron browser window
 	mainWindow.loadFile('src/index.html');

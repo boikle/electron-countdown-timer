@@ -5,7 +5,7 @@ const timer = new CountdownTimer();
 let timerElem = timer.getTimer();
 
 // Listen to click events to open the config window for the timer.
-timerElem.addEventListener('click', function(){
+timerElem.addEventListener('click', function() {
 	ipcRenderer.send('openConfigWindow', null);
 });
 
