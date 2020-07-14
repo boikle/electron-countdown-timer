@@ -1,7 +1,7 @@
-/** Class representing the countdown timer's control panel */
-class CountdownControlPanel {
+/** Class representing the countdown timer's controls */
+class CountdownControls {
 	/**
-	* Constructor for the Countdown Timer's Control Panel
+	* Constructor for the Countdown Timer's Controls
 	* @constructor
 	*/
 	constructor() {
@@ -47,6 +47,7 @@ class CountdownControlPanel {
 			document.dispatchEvent(event);
 		}
 	}
+
 }
 
-module.exports = CountdownControlPanel;
+module.exports = CountdownControls;
