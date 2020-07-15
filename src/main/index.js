@@ -19,7 +19,7 @@ function createAboutWindow() {
 	// Open devtools on start
 	aboutWindow.webContents.openDevTools();
 
-	aboutWindow.loadFile('src/renderer/about/about.html');
+	aboutWindow.loadFile('src/renderer/about/index.html');
 }
 
 // Create the config timer window
@@ -38,7 +38,7 @@ function createConfigWindow() {
 	// Open devtools on start
 	configWindow.webContents.openDevTools();
 
-	configWindow.loadFile('src/renderer/config/config.html');
+	configWindow.loadFile('src/renderer/config/index.html');
 }
 
 // Create the main countdown timer window
@@ -58,7 +58,7 @@ function createMainWindow () {
 	mainWindow.webContents.openDevTools();
 
 	// Load index.html file into electron browser window
-	mainWindow.loadFile('src/renderer/index/index.html');
+	mainWindow.loadFile('src/renderer/main/index.html');
 
 	// Inter Process Communication
 	// Sends an configTimer event with the received argument
