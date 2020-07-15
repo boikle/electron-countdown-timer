@@ -7,7 +7,7 @@ class CountdownTimer {
 	* @constructor
 	*/
 	constructor() {
-		this.timerControls = new CountdownControls();
+		this.controls = new CountdownControls();
 		this.countdownInterval = null;
 		let _this = this;
 		this.timer = document.getElementById('countdown_timer');
@@ -41,7 +41,7 @@ class CountdownTimer {
 				_this.setCountdownTime(0);
 				_this.updateTimer();
 				_this.pauseTimer();
-				_this.timerControls.togglePlayButtonState();
+				_this.controls.togglePlayButtonState();
 			}
 		}, interval);
 	}
