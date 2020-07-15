@@ -9,10 +9,7 @@
   },
   "scripts": {
     "start": "electron .",
-    "test": "mocha",
-    "package-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --prune=true --out=release-builds",
-    "package-win": "electron-packager . electron-countdown-timer --overwrite --asar=true --platform=win32 --arch=ia32 --prune=true --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"Electron Countdown Timer\"",
-    "package-linux": "electron-packager . electron-countedown-timer --overwrite --asar=true --platform=linux --arch=x64  --prune=true --out=release-builds"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -31,7 +28,6 @@
   "homepage": "https://github.com/boikle/electron-countdown-timer#readme",
   "devDependencies": {
     "electron": "^9.0.4",
-    "electron-packager": "^15.0.0",
     "eslint": "^7.3.0",
     "jsdom": "^16.2.2",
     "mocha": "^8.0.1"
