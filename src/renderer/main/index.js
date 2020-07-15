@@ -1,5 +1,5 @@
 const {ipcRenderer} = require('electron');
-const CountdownTimer = require('../../common/countdown_timer');
+const CountdownTimer = require('../../common/timer/countdown_timer');
 
 const timer = new CountdownTimer();
 let timerElem = timer.getTimer();
@@ -12,8 +12,8 @@ timerElem.addEventListener('click', function() {
 // Listen for configTimer events, and update the timer with updated time.
 ipcRenderer.on('configTimer', function(event, arg) {
 	timer.pauseTimer();
-	if (timer.controls.getState() === "on") {
-		timer.controls.togglePlayButtonState();
+	if (timer.playBtn.getState() === "on") {
+		timer.playBtn.toggleState();
 	}
 	timer.setCountdownTime(Number(arg));
 	timer.updateTimer();
