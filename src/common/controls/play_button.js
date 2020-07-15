@@ -1,7 +1,7 @@
-/** Class representing the countdown timer's controls */
-class CountdownControls {
+/** Class representing the countdown timer's play button control */
+class PlayButton {
 	/**
-	* Constructor for the Countdown Timer's Controls
+	* Constructor for the Countdown Timer's Play Button
 	* @constructor
 	*/
 	constructor() {
@@ -25,14 +25,14 @@ class CountdownControls {
 		this.playBtn.setAttribute('id', 'playbtn');
 		this.playBtn.classList.remove('pause');
 		this.playBtn.addEventListener('click', function() {
-			_this.togglePlayButtonState();
+			_this.toggleState();
 		});
 
 		panel.appendChild(this.playBtn);
 	}
 
 	// Helper function to perform toggle logic when play/pause button is clicked
-	togglePlayButtonState() {
+	toggleState() {
 		let event;
 		if (this.state === "off") {
 			this.state = "on";
@@ -50,4 +50,4 @@ class CountdownControls {
 
 }
 
-module.exports = CountdownControls;
+module.exports = PlayButton;
