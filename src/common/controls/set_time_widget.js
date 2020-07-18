@@ -1,4 +1,4 @@
-const timeInput = require('./time_input.js');
+const timeInput = require('./time_input');
 
 // Class for creating a set time widget used for configuring the timer's value.
 class SetTimeWidget {
