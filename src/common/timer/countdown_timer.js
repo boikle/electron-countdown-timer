@@ -1,6 +1,6 @@
 const PlayButton = require('../controls/play_button');
 
-/** Class representing a coundown timer */
+// Class representing a coundown timer
 class CountdownTimer {
 	/**
 	* Constructor for a countdown timer object.
