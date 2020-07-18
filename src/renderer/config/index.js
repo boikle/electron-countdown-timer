@@ -1,5 +1,9 @@
 const {ipcRenderer, remote} = require('electron');
-const set_timer_btn = document.getElementById('set_timer_btn');
+const SetTimeWidget = require('../../common/controls/set_time_widget');
+const setTimerBtn = document.getElementById('set_timer_btn');
+
+// Add set time widget
+let set_time_widget = new SetTimeWidget();
 
 /**
 * Convert Hours (HH), Minutes (MM), and Seconds (SS) values
@@ -72,7 +76,7 @@ function inputValidator() {
 }
 
 // Add Event Handler for set timer button
-set_timer_btn.addEventListener('click', function() {
+setTimerBtn.addEventListener('click', function() {
 	let config_window = remote.getCurrentWindow();
 
 	// Validate Input values;

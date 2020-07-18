@@ -2,7 +2,7 @@ input {
     width: 40px;
 }
 
-#timer_config {
+#set_time_widget {
     width: max-content;
     margin: 0 auto;
     padding: 5px;
