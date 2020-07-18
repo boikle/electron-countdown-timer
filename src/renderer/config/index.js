@@ -38,6 +38,8 @@ function inputValidator() {
 
 	if (Number(HH.value) > 23) {
 		HH.value = 23;
+		MM.value = 59;
+		SS.value = 59;
 		showWarning = true;
 	} else if (Number(HH.value) < 0) {
 		HH.value = 0;
@@ -46,6 +48,7 @@ function inputValidator() {
 
 	if (Number(MM.value) > 59) {
 		MM.value = 59;
+		SS.value = 59;
 		showWarning = true;
 	} else if (Number(MM.value) < 0) {
 		MM.value = 0;
@@ -67,7 +70,9 @@ function inputValidator() {
 			defaultId: 0,
 			title: 'Invalid Input',
 			message: 'Time inputs exceeded ranges.',
-			detail: 'Hours must be between 0-23. \nMinutes must be between 0-59. \nSeconds must be between 0-59.'
+			detail: `Hours must be between 0-23.
+				\nMinutes must be between 0-59.
+				\nSeconds must be between 0-59.`
 		};
 
 		// Request Main renderer to display warning dialog window.
