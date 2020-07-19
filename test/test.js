@@ -1,6 +1,6 @@
-const Timer = require('../src/js/countdown_timer');
+const Timer = require('../src/common/timer/countdown_timer');
+const ConvUtils = require('../src/common/utils/convert')
 const assert = require('assert');
-
 const jsdom = require('jsdom');
 const {JSDOM} = jsdom;
 const dom = new JSDOM(
@@ -45,9 +45,19 @@ describe('Timer', function() {
         });
     });
 
+});
+
+// Convert utilities tests
+describe('Convert Utils', function() {
 	describe('convertMStoHHMMSS()', function() {
 		it('3745000 ms should return a formatted string of 01:02:25', function() {
-			assert.equal(timer.convertMStoHHMMSS(3745000), '01:02:25')
+			assert.equal(ConvUtils.convertMStoHHMMSS(3745000), '01:02:25')
+		});
+	});
+
+	describe('convertHHMMSStoMS()', function() {
+		it('1 hour, 2 minutes, and 25 seconds should be converted to 3745000 ms', function() {
+			assert.equal(ConvUtils.convertHHMMSStoMS(1,2,25), 3745000)
 		});
 	});
 });
