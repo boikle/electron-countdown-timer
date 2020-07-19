@@ -25,7 +25,7 @@ exports.convertMStoHHMMSS = function(ms) {
 * @params {number} SS - Secondss input field value
 * @returns MS - milliseconds
 */
-exports.convertHHMMSSToMS = function(HH,MM,SS) {
+exports.convertHHMMSStoMS = function(HH,MM,SS) {
 	let MS;
 
 	MS = (HH * 3600000) + (MM * 60000) + (SS * 1000);
