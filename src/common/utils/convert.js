@@ -1,5 +1,5 @@
 /**
-* Converts remaing time into a string used by the countdown timer
+* Converts milliseconds into a string used by the countdown timer
 * The countdown timer uses the format of HH:MM:SS.
 * @param {number} ms - The remaining time in milliseconds.
 * @return {string} - hh:mm:ss formatted string of the provided ms.
@@ -19,7 +19,6 @@ exports.convertMStoHHMMSS = function(ms) {
 
 /**
 * Convert Hours (HH), Minutes (MM), and Seconds (SS) values
-* provided by config window input fields, and converts the combination
 * to milliseconds.
 * @params {number} HH - Hours input field value
 * @params {number} MM - Minutes input field value
