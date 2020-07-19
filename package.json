@@ -4,11 +4,9 @@
   "description": "A simple count down timer built with electron.js",
   "main": "./src/main/index.js",
   "private": true,
-  "directories": {
-    "test": "/test"
-  },
   "scripts": {
     "start": "electron .",
+    "build": "electron-packager . countdown-timer --overwrite --asar=true --platform=linux --arch=x64 --icon=build/icon.png --prune=true --out=dist",
     "test": "mocha"
   },
   "repository": {
@@ -28,6 +26,7 @@
   "homepage": "https://github.com/boikle/electron-countdown-timer#readme",
   "devDependencies": {
     "electron": "^9.0.4",
+    "electron-packager": "^15.0.0",
     "eslint": "^7.3.0",
     "jsdom": "^16.2.2",
     "mocha": "^8.0.1"
