@@ -16,3 +16,19 @@ exports.convertMStoHHMMSS = function(ms) {
 
 	return hh + ":" + mm + ":" + ss;
 };
+
+/**
+* Convert Hours (HH), Minutes (MM), and Seconds (SS) values
+* provided by config window input fields, and converts the combination
+* to milliseconds.
+* @params {number} HH - Hours input field value
+* @params {number} MM - Minutes input field value
+* @params {number} SS - Secondss input field value
+* @returns MS - milliseconds
+*/
+exports.convertHHMMSSToMS = function(HH,MM,SS) {
+	let MS;
+
+	MS = (HH * 3600000) + (MM * 60000) + (SS * 1000);
+	return MS;
+};
