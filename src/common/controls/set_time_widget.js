@@ -31,6 +31,18 @@ class SetTimeWidget {
 		this.addSetTimeWidget();
 	}
 
+	getHours() {
+		return Number(this.hhInput.value);
+	}
+
+	getMinutes() {
+		return Number(this.mmInput.value);
+	}
+
+	getSeconds() {
+		return Number(this.ssInput.value);
+	}
+
 	// Add the set time widget to the #set_time_widget div
 	addSetTimeWidget() {
 		const widget = document.getElementById('set_time_widget');
