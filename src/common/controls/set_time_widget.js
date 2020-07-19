@@ -68,6 +68,48 @@ class SetTimeWidget {
 		// Add seconds input
 		widget.appendChild(this.ssInput);
 	}
+
+	/**
+	* Checks if the input fields contain valid numeric values.
+	*
+	* Valid input ranges:
+	*  Hours must be between 0 - 23.
+	*  Minutes must be between 0 - 59.
+	*  Seconds must be between 0 - 59.
+	* @returns {boolean} - true if valid, false if not valid.
+	*/
+	validTimeInputs() {
+		let valid = true;
+
+		if (this.getHours() > 23) {
+			this.hhInput.value = 23;
+			this.mmInput.value = 59;
+			this.ssInput.value = 59;
+			valid = false;
+		} else if (this.getHours() < 0) {
+			this.hhInput.value = 0;
+			valid = false;
+		}
+
+		if (this.getMinutes() > 59) {
+			this.mmInput.value = 59;
+			this.ssInput.value = 59;
+			valid = false;
+		} else if (this.getMinutes() < 0) {
+			this.mmInput.value = 0;
+			valid = false;
+		}
+
+		if (this.getSeconds() > 59) {
+			this.ssInput.value = 59;
+			valid = false;
+		} else if (this.getSeconds() < 0) {
+			this.ssInput.value = 0;
+			valid = false;
+		}
+
+		return valid;
+	}
 }
 
 module.exports = SetTimeWidget;

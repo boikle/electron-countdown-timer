@@ -6,49 +6,12 @@ const setTimerBtn = document.getElementById('set_timer_btn');
 // Add set time widget
 let set_time_widget = new SetTimeWidget();
 
-/**
-* Checks if the input fields contain valid numeric values. If invalid, user
-* receives a warning message.
-*
-* Valid input ranges:
-*  Hours must be between 0 - 23.
-*  Minutes must be between 0 - 59.
-*  Seconds must be between 0 - 59.
-*/
-function inputValidator() {
-	let showWarning = false;
-	let HH = document.getElementById('hh');
-	let MM = document.getElementById('mm');
-	let SS = document.getElementById('ss');
+// Add Event Handler for set timer button
+setTimerBtn.addEventListener('click', function() {
+	let config_window = remote.getCurrentWindow();
 
-	if (Number(HH.value) > 23) {
-		HH.value = 23;
-		MM.value = 59;
-		SS.value = 59;
-		showWarning = true;
-	} else if (Number(HH.value) < 0) {
-		HH.value = 0;
-		showWarning = true;
-	}
-
-	if (Number(MM.value) > 59) {
-		MM.value = 59;
-		SS.value = 59;
-		showWarning = true;
-	} else if (Number(MM.value) < 0) {
-		MM.value = 0;
-		showWarning = true;
-	}
-
-	if (Number(SS.value) > 59) {
-		SS.value = 59;
-		showWarning = true;
-	} else if (Number(SS.value) < 0) {
-		SS.value = 0;
-		showWarning = true;
-	}
-
-	if (showWarning) {
+	// Check if Input values were valid, and if not, report to user;
+	if (!set_time_widget.validTimeInputs()) {
 		const dialogOptions = {
 			type: 'warning',
 			buttons: ['OK'],
@@ -63,14 +26,6 @@ function inputValidator() {
 		// Request Main renderer to display warning dialog window.
 		ipcRenderer.send('warningDialog', dialogOptions);
 	}
-}
-
-// Add Event Handler for set timer button
-setTimerBtn.addEventListener('click', function() {
-	let config_window = remote.getCurrentWindow();
-
-	// Validate Input values;
-	inputValidator();
 
 	// Convert input values to Milliseconds
 	let HH = set_time_widget.getHours();
