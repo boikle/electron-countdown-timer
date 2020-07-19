@@ -1,25 +1,10 @@
 const {ipcRenderer, remote} = require('electron');
 const SetTimeWidget = require('../../common/controls/set_time_widget');
+const ConvUtils = require('../../common/utils/convert');
 const setTimerBtn = document.getElementById('set_timer_btn');
 
 // Add set time widget
 let set_time_widget = new SetTimeWidget();
-
-/**
-* Convert Hours (HH), Minutes (MM), and Seconds (SS) values
-* provided by config window input fields, and converts the combination
-* to milliseconds.
-* @returns MS - milliseconds
-*/
-function convertHHMMSSInputsToMS() {
-	let MS;
-	let HH = Number(document.getElementById('hh').value);
-	let MM = Number(document.getElementById('mm').value);
-	let SS = Number(document.getElementById('ss').value);
-
-	MS = (HH * 3600000) + (MM * 60000) + (SS * 1000);
-	return MS;
-}
 
 /**
 * Checks if the input fields contain valid numeric values. If invalid, user
@@ -88,7 +73,10 @@ setTimerBtn.addEventListener('click', function() {
 	inputValidator();
 
 	// Convert input values to Milliseconds
-	let MS = convertHHMMSSInputsToMS();
+	let HH = set_time_widget.getHours();
+	let MM = set_time_widget.getMinutes();
+	let SS = set_time_widget.getSeconds();
+	let MS = ConvUtils.convertHHMMSSToMS(HH,MM,SS);
 
 	// Send milliseconds value using inter process communication
 	ipcRenderer.send('configTimer', MS.toString());
