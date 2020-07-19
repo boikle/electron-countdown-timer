@@ -1,4 +1,4 @@
-# electron-countdown-timer
+# Countdown Timer
 
 Description: A simple countdown timer application using electron.js, with the goal of becoming more familiar with electron. The design of the application allows a user to set the countdown time, and pause/play the timer.
 
