@@ -31,7 +31,7 @@ setTimerBtn.addEventListener('click', function() {
 	let HH = set_time_widget.getHours();
 	let MM = set_time_widget.getMinutes();
 	let SS = set_time_widget.getSeconds();
-	let MS = ConvUtils.convertHHMMSSToMS(HH,MM,SS);
+	let MS = ConvUtils.convertHHMMSStoMS(HH,MM,SS);
 
 	// Send milliseconds value using inter process communication
 	ipcRenderer.send('configTimer', MS.toString());
