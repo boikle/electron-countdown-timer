@@ -1,6 +1,6 @@
 {
   "name": "electron-countdown-timer",
-  "version": "0.8.0",
+  "version": "1.0.0",
   "description": "A simple count down timer built with electron.js",
   "main": "./src/main/index.js",
   "private": true,
