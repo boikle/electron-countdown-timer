@@ -29,6 +29,6 @@
     "electron-packager": "^15.0.0",
     "eslint": "^7.3.0",
     "jsdom": "^16.2.2",
-    "mocha": "^8.0.1"
+    "mocha": "^8.1.3"
   }
 }
