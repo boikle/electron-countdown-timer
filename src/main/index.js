@@ -48,7 +48,6 @@ function createMainWindow () {
 		width: 300,
 		height: 180,
 		resizable: false,
-		icon: "build/icon.png",
 		webPreferences: {
 			nodeIntegration: true
 		}
