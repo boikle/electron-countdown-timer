@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/boikle/electron-countdown-timer.git"
+    "url": "git+https://github.com/roikle/electron-countdown-timer.git"
   },
   "keywords": [
     "electron.js",
@@ -21,9 +21,9 @@
   "author": "Robert Oikle",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/boikle/electron-countdown-timer/issues"
+    "url": "https://github.com/roikle/electron-countdown-timer/issues"
   },
-  "homepage": "https://github.com/boikle/electron-countdown-timer#readme",
+  "homepage": "https://github.com/roikle/electron-countdown-timer#readme",
   "devDependencies": {
     "electron": "^9.0.4",
     "electron-packager": "^15.0.0",
